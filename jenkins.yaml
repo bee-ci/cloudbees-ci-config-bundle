@@ -1,3 +1,14 @@
+cloudbees-slack-integration:
+  config:
+    slackToken: "${slackToken}"
+    slackWorkspace: "T010A455W77"
+    users:
+    - id: "beedemo-dev"
+      jenkins: "beedemo-dev"
+      optedIn: true
+      scmId: "beedemo-dev"
+      slack: "REPLACE_USER_EMAIL"
+      slackWorkspace: "T010A455W77"
 cloudbees-pipeline-policies:
   config:
     policies:
@@ -7,8 +18,9 @@ cloudbees-pipeline-policies:
       - entirePipelineTimeoutRule:
           maxTime: 60
 jenkins:
+  authorizationStrategy: "cloudBeesRoleBasedAccessControl"
   quietPeriod: 0
-  systemMessage: 'Jenkins configured using CloudBees CI CasC - v4'
+  systemMessage: 'Jenkins configured using CloudBees CI CasC - v5'
 unclassified:
   hibernationConfiguration:
     activities:
